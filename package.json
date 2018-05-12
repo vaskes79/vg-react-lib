@@ -1,17 +1,17 @@
 {
   "name": "vg-react-lib",
   "version": "0.0.1",
-  "description": "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
+  "description":
+    "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
   "main": "index.js",
   "repository": "git@github.com:vaskes79/vg-react-lib.git",
   "author": "Vasily Guzov <kinev1979@gmail.com>",
   "license": "ISC",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "styleguide:build": "npx styleguidist build",
-    "dev": "npx styleguidist server"
+    "dev": "npx styleguidist server",
+    "deploy": "npm run styleguide:build && gh-pages -d styleguide"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -22,6 +22,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "gh-pages": "^1.1.0",
     "react-styleguidist": "^7.0.11",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
