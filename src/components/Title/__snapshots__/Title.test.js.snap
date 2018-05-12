@@ -2,7 +2,7 @@
 
 exports[`should render a H1 1`] = `
 <h1
-  className="sc-bdVaJa crOjFz"
+  className="sc-bdVaJa jQlCVT"
 >
   Hello Jest!
 </h1>

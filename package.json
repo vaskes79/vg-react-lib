@@ -1,17 +1,16 @@
 {
   "name": "vg-react-lib",
   "version": "0.0.1",
-  "description": "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
+  "description":
+    "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
   "main": "index.js",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/vaskes79/vg-react-lib.git"
+    "type": "git",
+    "url": "git+https://github.com/vaskes79/vg-react-lib.git"
   },
   "author": "Vasily Guzov <kinev1979@gmail.com>",
   "license": "ISC",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "prepublishOnly": "npm run clean && npm run build",
     "clean": "rimraf dist styleguide",
@@ -21,18 +20,35 @@
     "copy_files": "babel src --out-dir dist --copy-files",
     "postbuild": "npm run copy_files",
     "dist": "npm run clean && npm run build",
-    "dev": "npx styleguidist server"
+    "dev": "npx styleguidist server",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "setupFiles": ["./test/jestsetup.js"],
+    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "file-loader": "^1.1.11",
     "gh-pages": "^1.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.4.3",
+    "react-addons-test-utils": "^15.6.2",
     "react-styleguidist": "^7.0.11",
     "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
