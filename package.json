@@ -1,0 +1,12 @@
+{
+  "name": "vg-react-lib",
+  "version": "0.0.1",
+  "description": "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
+  "main": "index.js",
+  "repository": "git@github.com:vaskes79/vg-react-lib.git",
+  "author": "Vasily Guzov <kinev1979@gmail.com>",
+  "license": "ISC"
+  "files": [
+      "dist"
+  ]
+}
