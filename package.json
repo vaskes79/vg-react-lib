@@ -1,17 +1,27 @@
 {
   "name": "vg-react-lib",
   "version": "0.0.1",
-  "description":
-    "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
+  "description": "The persona npm library of react components by frontend developer Vasily Guzov kinev1979@gmail.com",
   "main": "index.js",
-  "repository": "git@github.com:vaskes79/vg-react-lib.git",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/vaskes79/vg-react-lib.git"
+  },
   "author": "Vasily Guzov <kinev1979@gmail.com>",
   "license": "ISC",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "styleguide:build": "npx styleguidist build",
-    "dev": "npx styleguidist server",
-    "deploy": "npm run styleguide:build && gh-pages -d styleguide"
+    "prepublishOnly": "npm run clean && npm run build",
+    "clean": "rimraf dist styleguide",
+    "styleguide:build": "npm run clean && npx styleguidist build",
+    "deploy": "npm run styleguide:build && gh-pages -d styleguide",
+    "build": "babel src -d dist",
+    "copy_files": "babel src --out-dir dist --copy-files",
+    "postbuild": "npm run copy_files",
+    "dist": "npm run clean && npm run build",
+    "dev": "npx styleguidist server"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -24,6 +34,7 @@
     "file-loader": "^1.1.11",
     "gh-pages": "^1.1.0",
     "react-styleguidist": "^7.0.11",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.8.2"
