@@ -1,4 +1,4 @@
-import { H1, H2, H3, H4, H5, H6 } from './components/Title';
+import Title, { H1, H2, H3, H4, H5, H6 } from './components/Title';
 
 export {
 	H1,
@@ -6,5 +6,6 @@ export {
 	H3,
 	H4,
 	H5,
-	H6
+	H6,
+  Title
 };

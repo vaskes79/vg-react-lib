@@ -1,11 +1,13 @@
-#### example using the [Title](https://github.com/developerby/join.chat.ui/issues/2) component
-import components in project
+#### Example using the Title component
+
+For import the component in project
 
 ```html
-import { H1 } from 'join-chat-ui';
-``` 
+import { H1 } from 'vg-react-lib';
+```
 
 Default the H1
-```jsx 
+
+```jsx
 <H1>Title H1</H1>
 ```
